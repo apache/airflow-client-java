@@ -30,7 +30,7 @@ import java.io.IOException;
  * Instance status information.
  */
 @ApiModel(description = "Instance status information.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-01T18:46:24.630454Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class HealthInfo {
   public static final String SERIALIZED_NAME_METADATABASE = "metadatabase";
   @SerializedName(SERIALIZED_NAME_METADATABASE)

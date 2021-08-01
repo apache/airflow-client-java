@@ -29,7 +29,7 @@ import java.time.OffsetDateTime;
  * Log of user operations via CLI or Web UI.
  */
 @ApiModel(description = "Log of user operations via CLI or Web UI.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-01T18:46:24.630454Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class EventLog {
   public static final String SERIALIZED_NAME_EVENT_LOG_ID = "event_log_id";
   @SerializedName(SERIALIZED_NAME_EVENT_LOG_ID)

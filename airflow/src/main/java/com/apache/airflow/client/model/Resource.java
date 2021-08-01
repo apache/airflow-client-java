@@ -28,7 +28,7 @@ import java.io.IOException;
  * A \&quot;resource\&quot; on which permissions are granted.
  */
 @ApiModel(description = "A \"resource\" on which permissions are granted.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-01T18:46:24.630454Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Resource {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

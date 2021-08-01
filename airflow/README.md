@@ -2,7 +2,6 @@
 
 Airflow API (Stable)
 - API version: 1.0.0
-  - Build date: 2021-08-01T18:46:24.630454Z[Etc/UTC]
 
 # Overview
 
