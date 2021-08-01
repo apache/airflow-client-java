@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * VariableCollectionAllOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-01T18:36:08.622088Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-01T18:46:24.630454Z[Etc/UTC]")
 public class VariableCollectionAllOf {
   public static final String SERIALIZED_NAME_VARIABLES = "variables";
   @SerializedName(SERIALIZED_NAME_VARIABLES)

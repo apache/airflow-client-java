@@ -28,7 +28,7 @@ import java.io.IOException;
  * XCom entry collection item.  The value field is only available when reading a single object due to the size of the value. 
  */
 @ApiModel(description = "XCom entry collection item.  The value field is only available when reading a single object due to the size of the value. ")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-01T18:36:08.622088Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-01T18:46:24.630454Z[Etc/UTC]")
 public class XComCollectionItem {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)

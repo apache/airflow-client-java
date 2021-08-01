@@ -37,7 +37,7 @@ import java.util.List;
  * DAG details.  For details see: (airflow.models.DAG)[https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/models/index.html#airflow.models.DAG] 
  */
 @ApiModel(description = "DAG details.  For details see: (airflow.models.DAG)[https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/models/index.html#airflow.models.DAG] ")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-01T18:36:08.622088Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-01T18:46:24.630454Z[Etc/UTC]")
 public class DAGDetail {
   public static final String SERIALIZED_NAME_DAG_ID = "dag_id";
   @SerializedName(SERIALIZED_NAME_DAG_ID)

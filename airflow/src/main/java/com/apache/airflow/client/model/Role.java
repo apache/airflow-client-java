@@ -31,7 +31,7 @@ import java.util.List;
  * Role item
  */
 @ApiModel(description = "Role item")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-01T18:36:08.622088Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-01T18:46:24.630454Z[Etc/UTC]")
 public class Role {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

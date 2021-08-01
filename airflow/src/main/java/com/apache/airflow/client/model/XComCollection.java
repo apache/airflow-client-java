@@ -33,7 +33,7 @@ import java.util.List;
  * Collection of XCom entries.
  */
 @ApiModel(description = "Collection of XCom entries.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-01T18:36:08.622088Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-01T18:46:24.630454Z[Etc/UTC]")
 public class XComCollection {
   public static final String SERIALIZED_NAME_XCOM_ENTRIES = "xcom_entries";
   @SerializedName(SERIALIZED_NAME_XCOM_ENTRIES)

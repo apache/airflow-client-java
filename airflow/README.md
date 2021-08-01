@@ -2,7 +2,7 @@
 
 Airflow API (Stable)
 - API version: 1.0.0
-  - Build date: 2021-08-01T18:36:08.622088Z[Etc/UTC]
+  - Build date: 2021-08-01T18:46:24.630454Z[Etc/UTC]
 
 # Overview
 
@@ -257,7 +257,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.apache.airflow</groupId>
   <artifactId>airflow-client</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>2.1.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -267,7 +267,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.apache.airflow:airflow-client:1.0.0-SNAPSHOT"
+compile "com.apache.airflow:airflow-client:2.1.0"
 ```
 
 ### Others
@@ -280,7 +280,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/airflow-client-1.0.0-SNAPSHOT.jar`
+* `target/airflow-client-2.1.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started

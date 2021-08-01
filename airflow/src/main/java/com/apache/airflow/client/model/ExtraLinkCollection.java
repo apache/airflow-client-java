@@ -31,7 +31,7 @@ import java.util.List;
  * The collection of extra links.
  */
 @ApiModel(description = "The collection of extra links.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-01T18:36:08.622088Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-01T18:46:24.630454Z[Etc/UTC]")
 public class ExtraLinkCollection {
   public static final String SERIALIZED_NAME_EXTRA_LINKS = "extra_links";
   @SerializedName(SERIALIZED_NAME_EXTRA_LINKS)

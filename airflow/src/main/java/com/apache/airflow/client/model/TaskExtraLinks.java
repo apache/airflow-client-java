@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * TaskExtraLinks
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-01T18:36:08.622088Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-01T18:46:24.630454Z[Etc/UTC]")
 public class TaskExtraLinks {
   public static final String SERIALIZED_NAME_CLASS_REF = "class_ref";
   @SerializedName(SERIALIZED_NAME_CLASS_REF)

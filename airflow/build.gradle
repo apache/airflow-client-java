@@ -3,7 +3,7 @@ apply plugin: 'eclipse'
 apply plugin: 'java'
 
 group = 'com.apache.airflow'
-version = '1.0.0-SNAPSHOT'
+version = '2.1.0'
 
 buildscript {
     repositories {
