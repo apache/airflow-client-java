@@ -19,6 +19,7 @@ List providers
 import com.apache.airflow.client.ApiClient;
 import com.apache.airflow.client.ApiException;
 import com.apache.airflow.client.Configuration;
+import com.apache.airflow.client.auth.*;
 import com.apache.airflow.client.models.*;
 import com.apache.airflow.client.api.ProviderApi;
 
@@ -26,6 +27,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost/api/v1");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
 
     ProviderApi apiInstance = new ProviderApi(defaultClient);
     try {
@@ -51,7 +58,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
 
 ### HTTP request headers
 

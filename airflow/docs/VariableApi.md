@@ -23,6 +23,7 @@ Delete a variable
 import com.apache.airflow.client.ApiClient;
 import com.apache.airflow.client.ApiException;
 import com.apache.airflow.client.Configuration;
+import com.apache.airflow.client.auth.*;
 import com.apache.airflow.client.models.*;
 import com.apache.airflow.client.api.VariableApi;
 
@@ -30,6 +31,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost/api/v1");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
 
     VariableApi apiInstance = new VariableApi(defaultClient);
     String variableKey = "variableKey_example"; // String | The variable Key.
@@ -58,7 +65,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
 
 ### HTTP request headers
 
@@ -88,6 +95,7 @@ Get a variable by key.
 import com.apache.airflow.client.ApiClient;
 import com.apache.airflow.client.ApiException;
 import com.apache.airflow.client.Configuration;
+import com.apache.airflow.client.auth.*;
 import com.apache.airflow.client.models.*;
 import com.apache.airflow.client.api.VariableApi;
 
@@ -95,6 +103,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost/api/v1");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
 
     VariableApi apiInstance = new VariableApi(defaultClient);
     String variableKey = "variableKey_example"; // String | The variable Key.
@@ -124,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
 
 ### HTTP request headers
 
@@ -153,6 +167,7 @@ The collection does not contain data. To get data, you must get a single entity.
 import com.apache.airflow.client.ApiClient;
 import com.apache.airflow.client.ApiException;
 import com.apache.airflow.client.Configuration;
+import com.apache.airflow.client.auth.*;
 import com.apache.airflow.client.models.*;
 import com.apache.airflow.client.api.VariableApi;
 
@@ -160,6 +175,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost/api/v1");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
 
     VariableApi apiInstance = new VariableApi(defaultClient);
     Integer limit = 100; // Integer | The numbers of items to return.
@@ -193,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
 
 ### HTTP request headers
 
@@ -221,6 +242,7 @@ Update a variable by key.
 import com.apache.airflow.client.ApiClient;
 import com.apache.airflow.client.ApiException;
 import com.apache.airflow.client.Configuration;
+import com.apache.airflow.client.auth.*;
 import com.apache.airflow.client.models.*;
 import com.apache.airflow.client.api.VariableApi;
 
@@ -228,6 +250,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost/api/v1");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
 
     VariableApi apiInstance = new VariableApi(defaultClient);
     String variableKey = "variableKey_example"; // String | The variable Key.
@@ -261,7 +289,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
 
 ### HTTP request headers
 
@@ -289,6 +317,7 @@ Create a variable
 import com.apache.airflow.client.ApiClient;
 import com.apache.airflow.client.ApiException;
 import com.apache.airflow.client.Configuration;
+import com.apache.airflow.client.auth.*;
 import com.apache.airflow.client.models.*;
 import com.apache.airflow.client.api.VariableApi;
 
@@ -296,6 +325,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost/api/v1");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
 
     VariableApi apiInstance = new VariableApi(defaultClient);
     Variable variable = new Variable(); // Variable | 
@@ -325,7 +360,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
 
 ### HTTP request headers
 

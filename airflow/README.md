@@ -292,6 +292,7 @@ Please follow the [installation](#installation) instruction and execute the foll
 import com.apache.airflow.client.ApiClient;
 import com.apache.airflow.client.ApiException;
 import com.apache.airflow.client.Configuration;
+import com.apache.airflow.client.auth.*;
 import com.apache.airflow.client.models.*;
 import com.apache.airflow.client.api.ConfigApi;
 
@@ -299,6 +300,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost/api/v1");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
 
     ConfigApi apiInstance = new ConfigApi(defaultClient);
     try {

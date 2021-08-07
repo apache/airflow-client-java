@@ -23,6 +23,7 @@ Delete a pool
 import com.apache.airflow.client.ApiClient;
 import com.apache.airflow.client.ApiException;
 import com.apache.airflow.client.Configuration;
+import com.apache.airflow.client.auth.*;
 import com.apache.airflow.client.models.*;
 import com.apache.airflow.client.api.PoolApi;
 
@@ -30,6 +31,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost/api/v1");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
 
     PoolApi apiInstance = new PoolApi(defaultClient);
     String poolName = "poolName_example"; // String | The pool name.
@@ -58,7 +65,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
 
 ### HTTP request headers
 
@@ -86,6 +93,7 @@ Get a pool
 import com.apache.airflow.client.ApiClient;
 import com.apache.airflow.client.ApiException;
 import com.apache.airflow.client.Configuration;
+import com.apache.airflow.client.auth.*;
 import com.apache.airflow.client.models.*;
 import com.apache.airflow.client.api.PoolApi;
 
@@ -93,6 +101,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost/api/v1");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
 
     PoolApi apiInstance = new PoolApi(defaultClient);
     String poolName = "poolName_example"; // String | The pool name.
@@ -122,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
 
 ### HTTP request headers
 
@@ -149,6 +163,7 @@ List pools
 import com.apache.airflow.client.ApiClient;
 import com.apache.airflow.client.ApiException;
 import com.apache.airflow.client.Configuration;
+import com.apache.airflow.client.auth.*;
 import com.apache.airflow.client.models.*;
 import com.apache.airflow.client.api.PoolApi;
 
@@ -156,6 +171,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost/api/v1");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
 
     PoolApi apiInstance = new PoolApi(defaultClient);
     Integer limit = 100; // Integer | The numbers of items to return.
@@ -189,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
 
 ### HTTP request headers
 
@@ -215,6 +236,7 @@ Update a pool
 import com.apache.airflow.client.ApiClient;
 import com.apache.airflow.client.ApiException;
 import com.apache.airflow.client.Configuration;
+import com.apache.airflow.client.auth.*;
 import com.apache.airflow.client.models.*;
 import com.apache.airflow.client.api.PoolApi;
 
@@ -222,6 +244,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost/api/v1");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
 
     PoolApi apiInstance = new PoolApi(defaultClient);
     String poolName = "poolName_example"; // String | The pool name.
@@ -255,7 +283,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
 
 ### HTTP request headers
 
@@ -284,6 +312,7 @@ Create a pool
 import com.apache.airflow.client.ApiClient;
 import com.apache.airflow.client.ApiException;
 import com.apache.airflow.client.Configuration;
+import com.apache.airflow.client.auth.*;
 import com.apache.airflow.client.models.*;
 import com.apache.airflow.client.api.PoolApi;
 
@@ -291,6 +320,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost/api/v1");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
 
     PoolApi apiInstance = new PoolApi(defaultClient);
     Pool pool = new Pool(); // Pool | 
@@ -320,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
 
 ### HTTP request headers
 

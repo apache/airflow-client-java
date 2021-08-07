@@ -20,6 +20,7 @@ Get a log entry
 import com.apache.airflow.client.ApiClient;
 import com.apache.airflow.client.ApiException;
 import com.apache.airflow.client.Configuration;
+import com.apache.airflow.client.auth.*;
 import com.apache.airflow.client.models.*;
 import com.apache.airflow.client.api.EventLogApi;
 
@@ -27,6 +28,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost/api/v1");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
 
     EventLogApi apiInstance = new EventLogApi(defaultClient);
     Integer eventLogId = 56; // Integer | The event log ID.
@@ -56,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
 
 ### HTTP request headers
 
@@ -85,6 +92,7 @@ List log entries from event log.
 import com.apache.airflow.client.ApiClient;
 import com.apache.airflow.client.ApiException;
 import com.apache.airflow.client.Configuration;
+import com.apache.airflow.client.auth.*;
 import com.apache.airflow.client.models.*;
 import com.apache.airflow.client.api.EventLogApi;
 
@@ -92,6 +100,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost/api/v1");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
 
     EventLogApi apiInstance = new EventLogApi(defaultClient);
     Integer limit = 100; // Integer | The numbers of items to return.
@@ -125,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
 
 ### HTTP request headers
 

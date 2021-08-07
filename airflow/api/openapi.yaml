@@ -231,6 +231,10 @@ externalDocs:
 servers:
 - description: Apache Airflow Stable API.
   url: /api/v1
+security:
+- Basic: []
+- GoogleOpenId: []
+- Kerberos: []
 tags:
 - name: Config
 - name: Connection
