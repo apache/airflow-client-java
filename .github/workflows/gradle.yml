@@ -22,7 +22,7 @@ jobs:
         java-version: '8'
         distribution: 'adopt'
     - name: Grant execute permission for gradlew
-      run: chmod +x ./airflow-client/gradlew
+      run: chmod +x ./airflow-client/gradlew && echo $(pwd)
     - name: Build with Gradle
       run: ./airflow-client/gradlew build
     
