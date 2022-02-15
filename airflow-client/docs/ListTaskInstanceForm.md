@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **endDateLte** | **OffsetDateTime** | Returns objects less than or equal to the specified date.  This can be combined with start_date_gte parameter to receive only the selected period.  |  [optional]
 **durationGte** | **BigDecimal** | Returns objects greater than or equal to the specified values.  This can be combined with duration_lte parameter to receive only the selected period.  |  [optional]
 **durationLte** | **BigDecimal** | Returns objects less than or equal to the specified values.  This can be combined with duration_gte parameter to receive only the selected range.  |  [optional]
-**state** | **List&lt;String&gt;** | The value can be repeated to retrieve multiple matching values (OR condition). |  [optional]
+**state** | **List&lt;TaskState&gt;** | The value can be repeated to retrieve multiple matching values (OR condition). |  [optional]
 **pool** | **List&lt;String&gt;** | The value can be repeated to retrieve multiple matching values (OR condition). |  [optional]
 **queue** | **List&lt;String&gt;** | The value can be repeated to retrieve multiple matching values (OR condition). |  [optional]
 

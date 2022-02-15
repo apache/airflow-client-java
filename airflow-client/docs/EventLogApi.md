@@ -110,7 +110,7 @@ public class Example {
     EventLogApi apiInstance = new EventLogApi(defaultClient);
     Integer limit = 100; // Integer | The numbers of items to return.
     Integer offset = 56; // Integer | The number of items to skip before starting to collect the result set.
-    String orderBy = "orderBy_example"; // String | The name of the field to order the results by. Prefix a field name with `-` to reverse the sort order. 
+    String orderBy = "orderBy_example"; // String | The name of the field to order the results by. Prefix a field name with `-` to reverse the sort order.  *New in version 2.1.0* 
     try {
       EventLogCollection result = apiInstance.getEventLogs(limit, offset, orderBy);
       System.out.println(result);
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional]
- **orderBy** | **String**| The name of the field to order the results by. Prefix a field name with &#x60;-&#x60; to reverse the sort order.  | [optional]
+ **orderBy** | **String**| The name of the field to order the results by. Prefix a field name with &#x60;-&#x60; to reverse the sort order.  *New in version 2.1.0*  | [optional]
 
 ### Return type
 

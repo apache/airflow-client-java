@@ -17,6 +17,8 @@ Method | HTTP request | Description
 
 Delete a user
 
+Delete a user with a specific username.  *New in version 2.2.0* 
+
 ### Example
 ```java
 // Import classes:
@@ -39,7 +41,7 @@ public class Example {
 
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String username = "username_example"; // String | The username of the user
+    String username = "username_example"; // String | The username of the user.  *New in version 2.1.0* 
     try {
       apiInstance.deleteUser(username);
     } catch (ApiException e) {
@@ -57,7 +59,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**| The username of the user |
+ **username** | **String**| The username of the user.  *New in version 2.1.0*  |
 
 ### Return type
 
@@ -87,6 +89,8 @@ null (empty response body)
 
 Get a user
 
+Get a user with a specific username.  *New in version 2.1.0* 
+
 ### Example
 ```java
 // Import classes:
@@ -109,7 +113,7 @@ public class Example {
 
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String username = "username_example"; // String | The username of the user
+    String username = "username_example"; // String | The username of the user.  *New in version 2.1.0* 
     try {
       UserCollectionItem result = apiInstance.getUser(username);
       System.out.println(result);
@@ -128,7 +132,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**| The username of the user |
+ **username** | **String**| The username of the user.  *New in version 2.1.0*  |
 
 ### Return type
 
@@ -157,6 +161,8 @@ Name | Type | Description  | Notes
 
 List users
 
+Get a list of users.  *New in version 2.1.0* 
+
 ### Example
 ```java
 // Import classes:
@@ -181,7 +187,7 @@ public class Example {
     UserApi apiInstance = new UserApi(defaultClient);
     Integer limit = 100; // Integer | The numbers of items to return.
     Integer offset = 56; // Integer | The number of items to skip before starting to collect the result set.
-    String orderBy = "orderBy_example"; // String | The name of the field to order the results by. Prefix a field name with `-` to reverse the sort order. 
+    String orderBy = "orderBy_example"; // String | The name of the field to order the results by. Prefix a field name with `-` to reverse the sort order.  *New in version 2.1.0* 
     try {
       UserCollection result = apiInstance.getUsers(limit, offset, orderBy);
       System.out.println(result);
@@ -202,7 +208,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional]
- **orderBy** | **String**| The name of the field to order the results by. Prefix a field name with &#x60;-&#x60; to reverse the sort order.  | [optional]
+ **orderBy** | **String**| The name of the field to order the results by. Prefix a field name with &#x60;-&#x60; to reverse the sort order.  *New in version 2.1.0*  | [optional]
 
 ### Return type
 
@@ -230,6 +236,8 @@ Name | Type | Description  | Notes
 
 Update a user
 
+Update fields for a user.  *New in version 2.2.0* 
+
 ### Example
 ```java
 // Import classes:
@@ -252,7 +260,7 @@ public class Example {
 
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String username = "username_example"; // String | The username of the user
+    String username = "username_example"; // String | The username of the user.  *New in version 2.1.0* 
     User user = new User(); // User | 
     List<String> updateMask = Arrays.asList(); // List<String> | The fields to update on the resource. If absent or empty, all modifiable fields are updated. A comma-separated list of fully qualified names of fields. 
     try {
@@ -273,7 +281,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**| The username of the user |
+ **username** | **String**| The username of the user.  *New in version 2.1.0*  |
  **user** | [**User**](User.md)|  |
  **updateMask** | [**List&lt;String&gt;**](String.md)| The fields to update on the resource. If absent or empty, all modifiable fields are updated. A comma-separated list of fully qualified names of fields.  | [optional]
 
@@ -304,6 +312,8 @@ Name | Type | Description  | Notes
 > User postUser(user)
 
 Create a user
+
+Create a new user with unique username and email.  *New in version 2.2.0* 
 
 ### Example
 ```java
@@ -368,4 +378,5 @@ Name | Type | Description  | Notes
 **400** | Client specified an invalid argument. |  -  |
 **401** | Request not authenticated due to missing, invalid, authentication info. |  -  |
 **403** | Client does not have sufficient permission. |  -  |
+**409** | An existing resource conflicts with the request. |  -  |
 

@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**getDagRuns**](DagRunApi.md#getDagRuns) | **GET** /dags/{dag_id}/dagRuns | List DAG runs
 [**getDagRunsBatch**](DagRunApi.md#getDagRunsBatch) | **POST** /dags/~/dagRuns/list | List DAG runs (batch)
 [**postDagRun**](DagRunApi.md#postDagRun) | **POST** /dags/{dag_id}/dagRuns | Trigger a new DAG run
+[**updateDagRunState**](DagRunApi.md#updateDagRunState) | **PATCH** /dags/{dag_id}/dagRuns/{dag_run_id} | Modify a DAG run
 
 
 <a name="deleteDagRun"></a>
@@ -157,7 +158,7 @@ Name | Type | Description  | Notes
 
 <a name="getDagRuns"></a>
 # **getDagRuns**
-> DAGRunCollection getDagRuns(dagId, limit, offset, executionDateGte, executionDateLte, startDateGte, startDateLte, endDateGte, endDateLte, orderBy)
+> DAGRunCollection getDagRuns(dagId, limit, offset, executionDateGte, executionDateLte, startDateGte, startDateLte, endDateGte, endDateLte, state, orderBy)
 
 List DAG runs
 
@@ -194,9 +195,10 @@ public class Example {
     OffsetDateTime startDateLte = OffsetDateTime.now(); // OffsetDateTime | Returns objects less or equal the specified date.  This can be combined with start_date_gte parameter to receive only the selected period. 
     OffsetDateTime endDateGte = OffsetDateTime.now(); // OffsetDateTime | Returns objects greater or equal the specified date.  This can be combined with start_date_lte parameter to receive only the selected period. 
     OffsetDateTime endDateLte = OffsetDateTime.now(); // OffsetDateTime | Returns objects less than or equal to the specified date.  This can be combined with start_date_gte parameter to receive only the selected period. 
-    String orderBy = "orderBy_example"; // String | The name of the field to order the results by. Prefix a field name with `-` to reverse the sort order. 
+    List<String> state = Arrays.asList(); // List<String> | The value can be repeated to retrieve multiple matching values (OR condition).
+    String orderBy = "orderBy_example"; // String | The name of the field to order the results by. Prefix a field name with `-` to reverse the sort order.  *New in version 2.1.0* 
     try {
-      DAGRunCollection result = apiInstance.getDagRuns(dagId, limit, offset, executionDateGte, executionDateLte, startDateGte, startDateLte, endDateGte, endDateLte, orderBy);
+      DAGRunCollection result = apiInstance.getDagRuns(dagId, limit, offset, executionDateGte, executionDateLte, startDateGte, startDateLte, endDateGte, endDateLte, state, orderBy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DagRunApi#getDagRuns");
@@ -222,7 +224,8 @@ Name | Type | Description  | Notes
  **startDateLte** | **OffsetDateTime**| Returns objects less or equal the specified date.  This can be combined with start_date_gte parameter to receive only the selected period.  | [optional]
  **endDateGte** | **OffsetDateTime**| Returns objects greater or equal the specified date.  This can be combined with start_date_lte parameter to receive only the selected period.  | [optional]
  **endDateLte** | **OffsetDateTime**| Returns objects less than or equal to the specified date.  This can be combined with start_date_gte parameter to receive only the selected period.  | [optional]
- **orderBy** | **String**| The name of the field to order the results by. Prefix a field name with &#x60;-&#x60; to reverse the sort order.  | [optional]
+ **state** | [**List&lt;String&gt;**](String.md)| The value can be repeated to retrieve multiple matching values (OR condition). | [optional]
+ **orderBy** | **String**| The name of the field to order the results by. Prefix a field name with &#x60;-&#x60; to reverse the sort order.  *New in version 2.1.0*  | [optional]
 
 ### Return type
 
@@ -385,7 +388,84 @@ Name | Type | Description  | Notes
 **200** | Success. |  -  |
 **400** | Client specified an invalid argument. |  -  |
 **401** | Request not authenticated due to missing, invalid, authentication info. |  -  |
-**409** | The resource that a client tried to create already exists. |  -  |
+**409** | An existing resource conflicts with the request. |  -  |
+**403** | Client does not have sufficient permission. |  -  |
+**404** | A specified resource is not found. |  -  |
+
+<a name="updateDagRunState"></a>
+# **updateDagRunState**
+> DAGRun updateDagRunState(dagId, dagRunId, updateDagRunState)
+
+Modify a DAG run
+
+Modify a DAG run.  *New in version 2.2.0* 
+
+### Example
+```java
+// Import classes:
+import com.apache.airflow.client.ApiClient;
+import com.apache.airflow.client.ApiException;
+import com.apache.airflow.client.Configuration;
+import com.apache.airflow.client.auth.*;
+import com.apache.airflow.client.models.*;
+import com.apache.airflow.client.api.DagRunApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost/api/v1");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+
+    DagRunApi apiInstance = new DagRunApi(defaultClient);
+    String dagId = "dagId_example"; // String | The DAG ID.
+    String dagRunId = "dagRunId_example"; // String | The DAG run ID.
+    UpdateDagRunState updateDagRunState = new UpdateDagRunState(); // UpdateDagRunState | 
+    try {
+      DAGRun result = apiInstance.updateDagRunState(dagId, dagRunId, updateDagRunState);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DagRunApi#updateDagRunState");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dagId** | **String**| The DAG ID. |
+ **dagRunId** | **String**| The DAG run ID. |
+ **updateDagRunState** | [**UpdateDagRunState**](UpdateDagRunState.md)|  |
+
+### Return type
+
+[**DAGRun**](DAGRun.md)
+
+### Authorization
+
+[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success. |  -  |
+**400** | Client specified an invalid argument. |  -  |
+**401** | Request not authenticated due to missing, invalid, authentication info. |  -  |
 **403** | Client does not have sufficient permission. |  -  |
 **404** | A specified resource is not found. |  -  |
 

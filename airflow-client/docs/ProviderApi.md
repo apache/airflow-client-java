@@ -13,6 +13,8 @@ Method | HTTP request | Description
 
 List providers
 
+Get a list of providers.  *New in version 2.1.0* 
+
 ### Example
 ```java
 // Import classes:

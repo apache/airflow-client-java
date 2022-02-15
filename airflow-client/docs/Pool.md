@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **usedSlots** | **Integer** | The number of slots used by running tasks at the moment. |  [optional] [readonly]
 **queuedSlots** | **Integer** | The number of slots used by queued tasks at the moment. |  [optional] [readonly]
 **openSlots** | **Integer** | The number of free slots at the moment. |  [optional] [readonly]
+**description** | **String** | The description of the pool.  *New in version 2.3.0*  |  [optional]
 
 
 

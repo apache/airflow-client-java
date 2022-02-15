@@ -2,7 +2,7 @@
 
 # DAGRunCollection
 
-Collection of DAG runs.
+Collection of DAG runs.  *Changed in version 2.1.0*&#58; 'total_entries' field is added. 
 
 ## Properties
 

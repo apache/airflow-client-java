@@ -2,7 +2,7 @@
 
 # ActionResource
 
-The Action-Resource item
+The Action-Resource item.  *New in version 2.1.0* 
 
 ## Properties
 

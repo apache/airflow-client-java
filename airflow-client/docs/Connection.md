@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **login** | **String** | Login of the connection. |  [optional]
 **schema** | **String** | Schema of the connection. |  [optional]
 **port** | **Integer** | Port of the connection. |  [optional]
-**password** | **String** | Paasword of the connection. |  [optional]
+**password** | **String** | Password of the connection. |  [optional]
 **extra** | **String** | Other values that cannot be put into another field, e.g. RSA keys. |  [optional]
 
 

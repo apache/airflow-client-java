@@ -13,9 +13,8 @@
 
 package com.apache.airflow.client.model;
 
-import com.apache.airflow.client.model.CollectionInfo;
-import com.apache.airflow.client.model.Pool;
-import com.apache.airflow.client.model.PoolCollectionAllOf;
+import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,41 +23,124 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
-
 
 /**
- * Model tests for PoolCollection
+ * Modify the state of a DAG run.  *New in version 2.2.0* 
  */
-public class PoolCollectionTest {
-    private final PoolCollection model = new PoolCollection();
+@ApiModel(description = "Modify the state of a DAG run.  *New in version 2.2.0* ")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+public class UpdateDagRunState {
+  /**
+   * The state to set this DagRun
+   */
+  @JsonAdapter(StateEnum.Adapter.class)
+  public enum StateEnum {
+    SUCCESS("success"),
+    
+    FAILED("failed");
 
-    /**
-     * Model tests for PoolCollection
-     */
-    @Test
-    public void testPoolCollection() {
-        // TODO: test PoolCollection
+    private String value;
+
+    StateEnum(String value) {
+      this.value = value;
     }
 
-    /**
-     * Test the property 'pools'
-     */
-    @Test
-    public void poolsTest() {
-        // TODO: test pools
+    public String getValue() {
+      return value;
     }
 
-    /**
-     * Test the property 'totalEntries'
-     */
-    @Test
-    public void totalEntriesTest() {
-        // TODO: test totalEntries
+    @Override
+    public String toString() {
+      return String.valueOf(value);
     }
+
+    public static StateEnum fromValue(String value) {
+      for (StateEnum b : StateEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<StateEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StateEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StateEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return StateEnum.fromValue(value);
+      }
+    }
+  }
+
+  public static final String SERIALIZED_NAME_STATE = "state";
+  @SerializedName(SERIALIZED_NAME_STATE)
+  private StateEnum state;
+
+
+  public UpdateDagRunState state(StateEnum state) {
+    
+    this.state = state;
+    return this;
+  }
+
+   /**
+   * The state to set this DagRun
+   * @return state
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The state to set this DagRun")
+
+  public StateEnum getState() {
+    return state;
+  }
+
+
+  public void setState(StateEnum state) {
+    this.state = state;
+  }
+
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    UpdateDagRunState updateDagRunState = (UpdateDagRunState) o;
+    return Objects.equals(this.state, updateDagRunState.state);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(state);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class UpdateDagRunState {\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
 
 }
+

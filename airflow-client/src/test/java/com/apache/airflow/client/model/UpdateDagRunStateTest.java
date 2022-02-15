@@ -13,9 +13,6 @@
 
 package com.apache.airflow.client.model;
 
-import com.apache.airflow.client.model.CollectionInfo;
-import com.apache.airflow.client.model.Pool;
-import com.apache.airflow.client.model.PoolCollectionAllOf;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,41 +21,31 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for PoolCollection
+ * Model tests for UpdateDagRunState
  */
-public class PoolCollectionTest {
-    private final PoolCollection model = new PoolCollection();
+public class UpdateDagRunStateTest {
+    private final UpdateDagRunState model = new UpdateDagRunState();
 
     /**
-     * Model tests for PoolCollection
+     * Model tests for UpdateDagRunState
      */
     @Test
-    public void testPoolCollection() {
-        // TODO: test PoolCollection
+    public void testUpdateDagRunState() {
+        // TODO: test UpdateDagRunState
     }
 
     /**
-     * Test the property 'pools'
+     * Test the property 'state'
      */
     @Test
-    public void poolsTest() {
-        // TODO: test pools
-    }
-
-    /**
-     * Test the property 'totalEntries'
-     */
-    @Test
-    public void totalEntriesTest() {
-        // TODO: test totalEntries
+    public void stateTest() {
+        // TODO: test state
     }
 
 }

@@ -213,7 +213,7 @@ server is unwilling to supply a default representation.
 ## AlreadyExists
 
 The request could not be completed due to a conflict with the current state of the target
-resource, meaning that the resource already exists
+resource, e.g. the resource it tries to create already exists.
 
 ## Unknown
 
@@ -336,6 +336,7 @@ Class | Method | HTTP request | Description
 *ConnectionApi* | [**patchConnection**](docs/ConnectionApi.md#patchConnection) | **PATCH** /connections/{connection_id} | Update a connection
 *ConnectionApi* | [**postConnection**](docs/ConnectionApi.md#postConnection) | **POST** /connections | Create a connection
 *ConnectionApi* | [**testConnection**](docs/ConnectionApi.md#testConnection) | **POST** /connections/test | Test a connection
+*DagApi* | [**deleteDag**](docs/DagApi.md#deleteDag) | **DELETE** /dags/{dag_id} | Delete a DAG
 *DagApi* | [**getDag**](docs/DagApi.md#getDag) | **GET** /dags/{dag_id} | Get basic information about a DAG
 *DagApi* | [**getDagDetails**](docs/DagApi.md#getDagDetails) | **GET** /dags/{dag_id}/details | Get a simplified representation of DAG
 *DagApi* | [**getDagSource**](docs/DagApi.md#getDagSource) | **GET** /dagSources/{file_token} | Get a source code
@@ -350,6 +351,7 @@ Class | Method | HTTP request | Description
 *DagRunApi* | [**getDagRuns**](docs/DagRunApi.md#getDagRuns) | **GET** /dags/{dag_id}/dagRuns | List DAG runs
 *DagRunApi* | [**getDagRunsBatch**](docs/DagRunApi.md#getDagRunsBatch) | **POST** /dags/~/dagRuns/list | List DAG runs (batch)
 *DagRunApi* | [**postDagRun**](docs/DagRunApi.md#postDagRun) | **POST** /dags/{dag_id}/dagRuns | Trigger a new DAG run
+*DagRunApi* | [**updateDagRunState**](docs/DagRunApi.md#updateDagRunState) | **PATCH** /dags/{dag_id}/dagRuns/{dag_run_id} | Modify a DAG run
 *EventLogApi* | [**getEventLog**](docs/EventLogApi.md#getEventLog) | **GET** /eventLogs/{event_log_id} | Get a log entry
 *EventLogApi* | [**getEventLogs**](docs/EventLogApi.md#getEventLogs) | **GET** /eventLogs | List log entries
 *ImportErrorApi* | [**getImportError**](docs/ImportErrorApi.md#getImportError) | **GET** /importErrors/{import_error_id} | Get an import error
@@ -460,6 +462,7 @@ Class | Method | HTTP request | Description
  - [TaskState](docs/TaskState.md)
  - [TimeDelta](docs/TimeDelta.md)
  - [TriggerRule](docs/TriggerRule.md)
+ - [UpdateDagRunState](docs/UpdateDagRunState.md)
  - [UpdateTaskInstancesState](docs/UpdateTaskInstancesState.md)
  - [User](docs/User.md)
  - [UserAllOf](docs/UserAllOf.md)

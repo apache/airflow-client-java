@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **dagId** | **String** | The ID of the DAG. |  [optional] [readonly]
 **rootDagId** | **String** | If the DAG is SubDAG then it is the top level DAG identifier. Otherwise, null. |  [optional] [readonly]
 **isPaused** | **Boolean** | Whether the DAG is paused. |  [optional]
-**isActive** | **Boolean** | Whether the DAG is currently seen by the scheduler(s). |  [optional]
+**isActive** | **Boolean** | Whether the DAG is currently seen by the scheduler(s).  *New in version 2.1.1*  *Changed in version 2.2.0*&amp;#58; Field is read-only.  |  [optional] [readonly]
 **isSubdag** | **Boolean** | Whether the DAG is SubDAG. |  [optional] [readonly]
 **fileloc** | **String** | The absolute path to the file. |  [optional] [readonly]
 **fileToken** | **String** | The key containing the encrypted path to the file. Encryption and decryption take place only on the server. This prevents the client from reading an non-DAG file. This also ensures API extensibility, because the format of encrypted data may change.  |  [optional] [readonly]

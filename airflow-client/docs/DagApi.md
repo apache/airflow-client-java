@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**deleteDag**](DagApi.md#deleteDag) | **DELETE** /dags/{dag_id} | Delete a DAG
 [**getDag**](DagApi.md#getDag) | **GET** /dags/{dag_id} | Get basic information about a DAG
 [**getDagDetails**](DagApi.md#getDagDetails) | **GET** /dags/{dag_id}/details | Get a simplified representation of DAG
 [**getDagSource**](DagApi.md#getDagSource) | **GET** /dagSources/{file_token} | Get a source code
@@ -14,6 +15,79 @@ Method | HTTP request | Description
 [**postClearTaskInstances**](DagApi.md#postClearTaskInstances) | **POST** /dags/{dag_id}/clearTaskInstances | Clear a set of task instances
 [**postSetTaskInstancesState**](DagApi.md#postSetTaskInstancesState) | **POST** /dags/{dag_id}/updateTaskInstancesState | Set a state of task instances
 
+
+<a name="deleteDag"></a>
+# **deleteDag**
+> deleteDag(dagId)
+
+Delete a DAG
+
+Deletes all metadata related to the DAG, including finished DAG Runs and Tasks. Logs are not deleted. This action cannot be undone.  *New in version 2.2.0* 
+
+### Example
+```java
+// Import classes:
+import com.apache.airflow.client.ApiClient;
+import com.apache.airflow.client.ApiException;
+import com.apache.airflow.client.Configuration;
+import com.apache.airflow.client.auth.*;
+import com.apache.airflow.client.models.*;
+import com.apache.airflow.client.api.DagApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost/api/v1");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+
+    DagApi apiInstance = new DagApi(defaultClient);
+    String dagId = "dagId_example"; // String | The DAG ID.
+    try {
+      apiInstance.deleteDag(dagId);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DagApi#deleteDag");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dagId** | **String**| The DAG ID. |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Success. |  -  |
+**400** | Client specified an invalid argument. |  -  |
+**401** | Request not authenticated due to missing, invalid, authentication info. |  -  |
+**403** | Client does not have sufficient permission. |  -  |
+**404** | A specified resource is not found. |  -  |
+**409** | An existing resource conflicts with the request. |  -  |
 
 <a name="getDag"></a>
 # **getDag**
@@ -234,7 +308,7 @@ Name | Type | Description  | Notes
 
 <a name="getDags"></a>
 # **getDags**
-> DAGCollection getDags(limit, offset, orderBy, onlyActive)
+> DAGCollection getDags(limit, offset, orderBy, tags, onlyActive, dagIdPattern)
 
 List DAGs
 
@@ -262,10 +336,12 @@ public class Example {
     DagApi apiInstance = new DagApi(defaultClient);
     Integer limit = 100; // Integer | The numbers of items to return.
     Integer offset = 56; // Integer | The number of items to skip before starting to collect the result set.
-    String orderBy = "orderBy_example"; // String | The name of the field to order the results by. Prefix a field name with `-` to reverse the sort order. 
-    Boolean onlyActive = true; // Boolean | Only return active DAGs.
+    String orderBy = "orderBy_example"; // String | The name of the field to order the results by. Prefix a field name with `-` to reverse the sort order.  *New in version 2.1.0* 
+    List<String> tags = Arrays.asList(); // List<String> | List of tags to filter results.  *New in version 2.2.0* 
+    Boolean onlyActive = true; // Boolean | Only return active DAGs.  *New in version 2.1.1* 
+    String dagIdPattern = "dagIdPattern_example"; // String | If set, only return DAGs with dag_ids matching this pattern.  *New in version 2.3.0* 
     try {
-      DAGCollection result = apiInstance.getDags(limit, offset, orderBy, onlyActive);
+      DAGCollection result = apiInstance.getDags(limit, offset, orderBy, tags, onlyActive, dagIdPattern);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DagApi#getDags");
@@ -284,8 +360,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional]
- **orderBy** | **String**| The name of the field to order the results by. Prefix a field name with &#x60;-&#x60; to reverse the sort order.  | [optional]
- **onlyActive** | **Boolean**| Only return active DAGs. | [optional] [default to true]
+ **orderBy** | **String**| The name of the field to order the results by. Prefix a field name with &#x60;-&#x60; to reverse the sort order.  *New in version 2.1.0*  | [optional]
+ **tags** | [**List&lt;String&gt;**](String.md)| List of tags to filter results.  *New in version 2.2.0*  | [optional]
+ **onlyActive** | **Boolean**| Only return active DAGs.  *New in version 2.1.1*  | [optional] [default to true]
+ **dagIdPattern** | **String**| If set, only return DAGs with dag_ids matching this pattern.  *New in version 2.3.0*  | [optional]
 
 ### Return type
 
@@ -407,7 +485,7 @@ public class Example {
 
     DagApi apiInstance = new DagApi(defaultClient);
     String dagId = "dagId_example"; // String | The DAG ID.
-    String orderBy = "orderBy_example"; // String | The name of the field to order the results by. Prefix a field name with `-` to reverse the sort order. 
+    String orderBy = "orderBy_example"; // String | The name of the field to order the results by. Prefix a field name with `-` to reverse the sort order.  *New in version 2.1.0* 
     try {
       TaskCollection result = apiInstance.getTasks(dagId, orderBy);
       System.out.println(result);
@@ -427,7 +505,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dagId** | **String**| The DAG ID. |
- **orderBy** | **String**| The name of the field to order the results by. Prefix a field name with &#x60;-&#x60; to reverse the sort order.  | [optional]
+ **orderBy** | **String**| The name of the field to order the results by. Prefix a field name with &#x60;-&#x60; to reverse the sort order.  *New in version 2.1.0*  | [optional]
 
 ### Return type
 

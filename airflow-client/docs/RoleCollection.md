@@ -2,7 +2,7 @@
 
 # RoleCollection
 
-Role Collections
+A collection of roles.  *New in version 2.1.0* 
 
 ## Properties
 

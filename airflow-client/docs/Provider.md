@@ -2,7 +2,7 @@
 
 # Provider
 
-The provider
+The provider  *New in version 2.1.0* 
 
 ## Properties
 

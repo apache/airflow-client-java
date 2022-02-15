@@ -2,7 +2,7 @@
 
 # UserCollection
 
-Collection of users.
+Collection of users.  *New in version 2.1.0* 
 
 ## Properties
 

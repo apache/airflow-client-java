@@ -2,7 +2,7 @@
 
 # ConnectionTest
 
-Connection test results.
+Connection test results.  *New in version 2.2.0* 
 
 ## Properties
 

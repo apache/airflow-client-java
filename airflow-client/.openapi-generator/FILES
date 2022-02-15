@@ -86,6 +86,7 @@ docs/TaskInstanceReferenceCollection.md
 docs/TaskState.md
 docs/TimeDelta.md
 docs/TriggerRule.md
+docs/UpdateDagRunState.md
 docs/UpdateTaskInstancesState.md
 docs/User.md
 docs/UserAllOf.md
@@ -219,6 +220,7 @@ src/main/java/com/apache/airflow/client/model/TaskInstanceReferenceCollection.ja
 src/main/java/com/apache/airflow/client/model/TaskState.java
 src/main/java/com/apache/airflow/client/model/TimeDelta.java
 src/main/java/com/apache/airflow/client/model/TriggerRule.java
+src/main/java/com/apache/airflow/client/model/UpdateDagRunState.java
 src/main/java/com/apache/airflow/client/model/UpdateTaskInstancesState.java
 src/main/java/com/apache/airflow/client/model/User.java
 src/main/java/com/apache/airflow/client/model/UserAllOf.java
@@ -324,6 +326,7 @@ src/test/java/com/apache/airflow/client/model/TaskStateTest.java
 src/test/java/com/apache/airflow/client/model/TaskTest.java
 src/test/java/com/apache/airflow/client/model/TimeDeltaTest.java
 src/test/java/com/apache/airflow/client/model/TriggerRuleTest.java
+src/test/java/com/apache/airflow/client/model/UpdateDagRunStateTest.java
 src/test/java/com/apache/airflow/client/model/UpdateTaskInstancesStateTest.java
 src/test/java/com/apache/airflow/client/model/UserAllOfTest.java
 src/test/java/com/apache/airflow/client/model/UserCollectionAllOfTest.java

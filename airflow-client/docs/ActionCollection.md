@@ -2,7 +2,7 @@
 
 # ActionCollection
 
-Action Collection
+A collection of actions.  *New in version 2.1.0* 
 
 ## Properties
 
