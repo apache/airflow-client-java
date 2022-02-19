@@ -30,7 +30,6 @@ import static org.junit.Assert.assertEquals;
 public class ConnectionApiTest {
 
     private final ConnectionApi api = new ConnectionApi();
-    private final String connectionId="test_default";
 
     private Connection test_connection(String connId) throws ApiException {
         Connection c=new Connection();
@@ -61,6 +60,7 @@ public class ConnectionApiTest {
      */
     @Test
     public void deleteConnectionTest() throws ApiException {
+        String connectionId = "delete_conn_test";
         api.postConnection(test_connection(connectionId));
         api.deleteConnection(connectionId);
     }
@@ -75,6 +75,7 @@ public class ConnectionApiTest {
      */
     @Test
     public void getConnectionTest() throws ApiException {
+        String connectionId = "get_conn_test";
         api.postConnection(test_connection(connectionId));
         assertEquals(connectionId, api.getConnection(connectionId).getConnectionId());
         api.deleteConnection(connectionId);
@@ -90,12 +91,12 @@ public class ConnectionApiTest {
      */
     @Test
     public void getConnectionsTest() throws ApiException {
-        api.postConnection(test_connection("con1"));
-        api.postConnection(test_connection("con2"));
+        api.postConnection(test_connection("get_conns_test1"));
+        api.postConnection(test_connection("get_conns_test2"));
 
         assertEquals(2, (Object)api.getConnections(null, null, null).getTotalEntries());
-        api.deleteConnection("con1");
-        api.deleteConnection("con2");
+        api.deleteConnection("get_conns_test1");
+        api.deleteConnection("get_conns_test2");
     }
 
     /**
@@ -108,6 +109,7 @@ public class ConnectionApiTest {
      */
     @Test
     public void patchConnectionTest() throws ApiException {
+        String connectionId = "patch_conns_test";
         Connection c = api.postConnection(test_connection(connectionId));
         assertEquals(80, (Object)c.getPort());
         c.setPort(90);
@@ -126,26 +128,29 @@ public class ConnectionApiTest {
      */
     @Test
     public void postConnectionTest() throws ApiException {
+        String connectionId = "post_conns_test";
         Connection c = api.postConnection(test_connection(connectionId));
         assertEquals(connectionId, (Object)api.getConnection(connectionId).getConnectionId());
         api.deleteConnection(connectionId);
 
     }
 
-    /**
-     * Test a connection
-     *
-     *
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void testConnectionTest() throws ApiException {
-        Connection connection = null;
-//        ConnectionTest response = api.testConnection(connection);
+//    /**
+//     * Test a connection
+//     *
+//     *
+//     *
+//     * @throws ApiException
+//     *          if the Api call fails
+//     */
+//    @Test
+//    public void testConnectionTest() throws ApiException {
+//        String connectionId = "test_conns_test";
+//        Connection c = api.postConnection(test_connection(connectionId));
+//        ConnectionTest response = api.testConnection(c);
+//        System.out.println(response);
+//        api.deleteConnection(connectionId);
 
-        // TODO: test validations
-    }
+//    }
 
 }

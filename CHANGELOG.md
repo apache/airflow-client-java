@@ -17,7 +17,7 @@
  under the License.
  -->
 
-# v2.1.0
+# v0.1.0
 - Client code is generated using OpenApi's 5.2.0 generator CLI
   
 - Apache Airflow API version: 2.1.x
