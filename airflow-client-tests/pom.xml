@@ -1,20 +1,42 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.apache.airflow</groupId>
-    <artifactId>airflow-client-java</artifactId>
-    <packaging>pom</packaging>
-    <name>airflow-client-java</name>
-    <version>0.1-SNAPSHOT</version>
-    <modules>
-        <module>airflow-client</module>
-        <module>airflow-client-tests</module>
-    </modules>
-    <description>Apache Airflow - OpenApi Client</description>
+    <parent>
+        <artifactId>airflow-client-java</artifactId>
+        <groupId>com.apache.airflow</groupId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>airflow-client-tests</artifactId>
+    <packaging>jar</packaging>
+    <name>airflow-client-tests</name>
+    <version>${project.parent.version}</version>
+    <description>Apache Airflow - OpenApi Client for Java Tests</description>
+
+    <dependencies>
+        <!-- test dependencies -->
+        <dependency>
+            <groupId>com.apache.airflow</groupId>
+            <artifactId>airflow-client</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit-version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>3.11.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
-            <plugin>
+           <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
@@ -60,7 +82,6 @@
                         </property>
                     </systemProperties>
                     <argLine>-Xms512m -Xmx1500m</argLine>
-                    <!-- keep parrale as 'classes' to avoid error due to parallel method executions                    -->
                     <parallel>classes</parallel>
                     <threadCount>10</threadCount>
                 </configuration>
@@ -167,4 +188,8 @@
         </plugins>
     </build>
 
+    <properties>
+        <junit-version>4.13.1</junit-version>
+    </properties>
 </project>
+
